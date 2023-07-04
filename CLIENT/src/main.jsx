@@ -14,7 +14,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App></App>}>
 
-      <Route path='/' element={<Home></Home>}></Route>
+      <Route index element={<Home></Home>}></Route>
 
       <Route path='/findproperty' element={<FindHome></FindHome>}></Route>
 

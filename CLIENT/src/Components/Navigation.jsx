@@ -17,7 +17,6 @@ return (
         
 
         <ul className='links'>
-            <li><NavLink to ='/'> Home </NavLink></li>
             <li><NavLink to = '/findproperty'> Find an Apartment </NavLink></li>
             <li><NavLink to = '/listproperty'> List your property </NavLink></li>
         </ul>
