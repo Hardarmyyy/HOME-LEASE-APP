@@ -38,10 +38,10 @@
 }
 
 .navigation .links a.active {
-    color: #1C3F94
+    color: #1a44b8
 }
 
-.navigation .loginSignUp a.active {
+.loginSignUp a:hover {
     background-color: #1C3F94;
     border-radius: 10px;
     color: #FCFCFC;

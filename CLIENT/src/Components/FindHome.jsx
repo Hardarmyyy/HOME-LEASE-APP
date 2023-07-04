@@ -5,7 +5,7 @@ return (
 
 <>
     <section>
-        <h1> Find propert page </h1>
+        <h1> Find property page </h1>
     </section>
 </>
 

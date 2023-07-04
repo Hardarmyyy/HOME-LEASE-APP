@@ -1,20 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import Home from './Components/Home.jsx'
 import './index.css'
 import { RouterProvider, Route, createRoutesFromElements, createBrowserRouter  } from 'react-router-dom'
 import FindHome from './Components/FindHome.jsx'
 import ListHome from './Components/ListHome.jsx'
 import Login from './Components/Login.jsx'
 import Signup from './Components/Signup.jsx'
+import Home from './Components/Home.jsx'
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App></App>}>
 
-      <Route index element={<Home></Home>}></Route>
+      <Route path='/' element={<Home></Home>}></Route>
 
       <Route path='/findproperty' element={<FindHome></FindHome>}></Route>
 
