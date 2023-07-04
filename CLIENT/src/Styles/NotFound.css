@@ -1,0 +1,9 @@
+.notFound {
+    text-align: center;
+    margin: 80px auto;
+}
+
+.notFound a {
+    text-decoration: none;
+
+}

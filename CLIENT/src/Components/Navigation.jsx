@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom'
 import '../Styles/Navigation.css'
 
 
-const Navigation = ({user, handleLoginPage, handleSignUpPage}) => {
+const Navigation = ({user, handleLoginPage, handleSignUpPage, homePageRedirect}) => {
 
 
 return (
@@ -11,24 +11,31 @@ return (
 <>
     <nav className='navigation'>
 
-        <Link to='/'> <h1> KAJEDO HOMES </h1> </Link>
+        <Link to='/' onClick={homePageRedirect}> <h1> KAJEDO HOMES </h1> </Link>
 
-        {user.login || user.signUp ? null : 
+        {user.public ? 
         
-
         <ul className='links'>
-            <li><NavLink to = '/findproperty'> Find an Apartment </NavLink></li>
-            <li><NavLink to = '/listproperty'> List your property </NavLink></li>
+            <li><NavLink to = '/find-property'> Find an Apartment </NavLink></li>
+            <li><NavLink to = '/list-property'> List your property </NavLink></li>
         </ul>
+
+        :
+
+        null
 
         }
 
-        {user.login || user.signUp ? null :   
+        {user.public ? 
 
         <ul className='loginSignUp'>
             <li><NavLink to = '/login' onClick={handleLoginPage}> Login </NavLink></li>
             <li><NavLink to = '/signup' onClick={handleSignUpPage}> Sign up </NavLink></li>
         </ul>
+
+        :
+
+        null
 
         }
 

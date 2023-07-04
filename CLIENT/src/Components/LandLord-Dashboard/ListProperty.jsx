@@ -1,15 +1,18 @@
 import React from 'react'
 
-const ListHome = () => {
+const ListProperty = () => {
+
 return (
 
 <>
+
     <section>
         <h1> List a property page </h1>
     </section>
+
 </>
 
 )
 }
 
-export default ListHome
+export default ListProperty

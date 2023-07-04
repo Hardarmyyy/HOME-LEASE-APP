@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, Route, createRoutesFromElements, createBrowserRouter  } from 'react-router-dom'
-import FindHome from './Components/FindHome.jsx'
-import ListHome from './Components/ListHome.jsx'
+import FindProperty from './Components/FindProperty.jsx'
+import ListProperty from './Components/LandLord-Dashboard/ListProperty.jsx'
 import Login from './Components/Login.jsx'
 import Signup from './Components/Signup.jsx'
 import Home from './Components/Home.jsx'
+import NotFound from './Components/NotFound.jsx'
+import PrivatesRoutes from './Utilities/PrivatesRoutes.jsx'
+import UserContextProvider from './Utilities/UserContext.jsx'
 
 
 const router = createBrowserRouter(
@@ -16,13 +19,19 @@ const router = createBrowserRouter(
 
       <Route index element={<Home></Home>}></Route>
 
-      <Route path='/findproperty' element={<FindHome></FindHome>}></Route>
+      <Route path='/find-property' element={<FindProperty></FindProperty>}></Route>
 
-      <Route path='/listproperty' element={<ListHome></ListHome>}></Route>
+      <Route  element={<PrivatesRoutes></PrivatesRoutes>}>
+
+        <Route path='/list-property' element={<ListProperty></ListProperty>}></Route>
+
+      </Route>
 
       <Route path='/login' element={<Login></Login>}></Route>
 
       <Route path='/signup' element={<Signup></Signup>}></Route>
+
+      <Route path='*' element={<NotFound></NotFound>}></Route>
 
     </Route>
   )
@@ -30,8 +39,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router = {router}>
-      <App />
-    </RouterProvider>
+    <UserContextProvider>
+      <RouterProvider router = {router}>
+        <App />
+      </RouterProvider>
+    </UserContextProvider>
   </React.StrictMode>,
 )

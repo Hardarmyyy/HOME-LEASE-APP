@@ -1,9 +1,12 @@
 import React from 'react'
 
-const FindHome = () => {
+const FindProperty = () => {
+
+
 return (
 
 <>
+    
     <section>
         <h1> Find property page </h1>
     </section>
@@ -12,4 +15,4 @@ return (
 )
 }
 
-export default FindHome
+export default FindProperty

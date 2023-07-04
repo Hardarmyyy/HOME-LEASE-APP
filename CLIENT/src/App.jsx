@@ -1,28 +1,19 @@
 import './App.css'
 import { Outlet } from 'react-router-dom'
 import Navigation from './Components/Navigation'
-import {useState} from 'react'
+import { useContext } from 'react'
+import { myUserContext } from './Utilities/UserContext'
+
 
 function App() {
 
-const [user, setUser] = useState({
-  login: false,
-  signUp: false,
-})
-
-const handleLoginPage = () => {
-    setUser((user) => { return{...user, login: true} })
-}
-
-const handleSignUpPage = () => {
-    setUser((user) => { return{...user, signUp: true} })
-}
+const {user, handleLoginPage, handleSignUpPage, homePageRedirect} = useContext(myUserContext)
 
   return (
     <>
       <header>
 
-        <Navigation user = {user} handleLoginPage = {handleLoginPage} handleSignUpPage={handleSignUpPage}></Navigation>
+      <Navigation user = {user} handleLoginPage = {handleLoginPage} handleSignUpPage={handleSignUpPage} homePageRedirect={homePageRedirect}></Navigation>
 
       </header>
       
