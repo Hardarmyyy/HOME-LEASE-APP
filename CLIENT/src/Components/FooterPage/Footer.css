@@ -1,0 +1,101 @@
+.footer {
+    background-color: #EFF4FF;
+    height: 600px;
+}
+
+.footerTop, 
+.footerBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px 80px;
+}
+
+.footerTop {
+    align-items: center;
+    padding-top: 80px;
+}
+
+.footerTop .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerTop .logo img {
+    cursor: pointer;
+}
+
+.footerTop .logo h1 {
+    color: #132A63;
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.footerLinksContainer {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    justify-content: space-between;
+    margin: 0px 60px 0px 0px;
+}
+
+.footerLinks h4,
+.updates h4 {
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+}
+
+.footerLinks h4 {
+    color: #1C3F94;
+    cursor: pointer;
+}
+
+.footerLinks p a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footerLinks p a,
+.footerLinks address,
+.updates p,
+.footerBottom p {
+    color: #333333;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footerBottom {
+    align-items: end;
+    padding-bottom: 80px;
+}
+
+.updates h4 {
+    color: #333333;
+}
+
+.emailAlerts form input[type="text"] {
+    width: 400px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #DDDDDD;
+}
+
+.emailAlerts form input[type="text"]::placeholder {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.emailAlerts form input[type="text"]:focus {
+    border: 1px solid #DDDDDD;
+    outline: none;
+}
+
+.socialMedia p {
+    color: #1C3F94;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}

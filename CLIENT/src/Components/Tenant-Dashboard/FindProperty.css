@@ -1,0 +1,11 @@
+.propertyListingsContainer {
+    width: 80%;
+    margin: 20px auto 80px;
+}
+
+.propertylistings {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}

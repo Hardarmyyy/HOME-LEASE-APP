@@ -6,6 +6,8 @@ export const myUserContext = createContext();
 
 const UserContextProvider = ({children}) => {
 
+// define a state to check if user is registered or public;
+
 const [user, setUser] = useState({
     public: true,
     regUser: false,
