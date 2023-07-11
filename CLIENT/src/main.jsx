@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, Route, createRoutesFromElements, createBrowserRouter  } from 'react-router-dom'
-import FindProperty from './Components/FindProperty.jsx'
+import FindProperty from './Components/Tenant-Dashboard/FindProperty.jsx'
 import ListProperty from './Components/LandLord-Dashboard/ListProperty.jsx'
-import Login from './Components/Login.jsx'
-import Signup from './Components/Signup.jsx'
-import Home from './Components/Home.jsx'
-import NotFound from './Components/NotFound.jsx'
+import Login from './Components/Login/Login.jsx'
+import Signup from './Components/SignUp/Signup.jsx'
+import Home from './Components/LandingPage/Home.jsx'
+import NotFound from './Components/NotFoundPage/NotFound.jsx'
 import PrivatesRoutes from './Utilities/PrivatesRoutes.jsx'
 import UserContextProvider from './Utilities/UserContext.jsx'
+import PropertyContextProvider from './Utilities/PropertyContext.jsx'
 
 
 const router = createBrowserRouter(
@@ -40,9 +41,11 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <UserContextProvider>
-      <RouterProvider router = {router}>
-        <App />
-      </RouterProvider>
+      <PropertyContextProvider>
+        <RouterProvider router = {router}>
+          <App />
+        </RouterProvider>
+      </PropertyContextProvider>
     </UserContextProvider>
   </React.StrictMode>,
 )

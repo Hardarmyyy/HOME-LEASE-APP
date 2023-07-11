@@ -1,16 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Navigation from './Navigation'
-import '../Styles/NotFound.css'
+import '../../Components/NotFoundPage/NotFound.css'
 
 const NotFound = () => {
 
-console.log('render notfound page')
 
 return (
 
 <>
-    {/* <Navigation user = {user} handleLoginPage = {handleLoginPage} handleSignUpPage={handleSignUpPage}></Navigation> */}
 
     <section className='notFound'>
 
