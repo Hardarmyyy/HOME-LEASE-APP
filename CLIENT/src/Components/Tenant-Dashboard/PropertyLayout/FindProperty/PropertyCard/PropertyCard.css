@@ -1,3 +1,16 @@
+.container {
+    position: relative;
+}
+
+.timeStamp {
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    color: #758494;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .cardContainer {
     border: 1px solid #D0D5DD;
     border-radius: 10px;
@@ -16,12 +29,6 @@
     border-radius: 10px;
     cursor: pointer;
     margin-right: 20px;
-}
-
-.cardContainer .timeStamp {
-    position: absolute;
-    right: 2.5%;
-    top: 3%;
 }
 
 .propertyDetails h3:first-child,
@@ -47,13 +54,21 @@
     font-family: "'Jost', sans-serif";
     font-weight: 600;
     position: absolute;
-    top: 28%;
+    top: 29%;
 }
 
 .propertyDetails p:nth-child(4) {
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    position: absolute;
+    top: 39%;
+}
+
+.propertyDetails p:nth-child(5) {
+    position: absolute;
+    top: 50%;
+    padding-right: 5px;
 }
 
 .propertyDetails p:nth-child(5),
@@ -74,6 +89,8 @@
     justify-content: flex-start;
     list-style-type: none;
     margin: 0px -30px;
+    position: absolute;
+    bottom: 18%;
 }
 
 .propertyDetails .perks li {
@@ -87,17 +104,23 @@
     font-size: 14px
 }
 
-.amenitiesContainer {
+.amenitiesContainer { 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-top: 10px;
+    position: absolute;
+    bottom: 1%;
 }
 
-.amenities,
+.amenities{
+    display: flex;
+    flex-direction: row;
+    margin-right: 75px;
+}
+
 .likes {
     display: flex;
     flex-direction: row;
+    margin-left: 90px;
 }
 
 .likes p,

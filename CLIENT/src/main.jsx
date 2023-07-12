@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, Route, createRoutesFromElements, createBrowserRouter  } from 'react-router-dom'
-import FindProperty from './Components/Tenant-Dashboard/FindProperty.jsx'
+import FindProperty from './Components/Tenant-Dashboard/PropertyLayout/FindProperty/FindProperty.jsx'
 import ListProperty from './Components/LandLord-Dashboard/ListProperty.jsx'
 import Login from './Components/Login/Login.jsx'
 import Signup from './Components/SignUp/Signup.jsx'
@@ -12,6 +12,8 @@ import NotFound from './Components/NotFoundPage/NotFound.jsx'
 import PrivatesRoutes from './Utilities/PrivatesRoutes.jsx'
 import UserContextProvider from './Utilities/UserContext.jsx'
 import PropertyContextProvider from './Utilities/PropertyContext.jsx'
+import PropertyDetails from './Components/Tenant-Dashboard/PropertyLayout/PropertyDetails/PropertyDetails.jsx'
+import PropertyLayout from './Components/Tenant-Dashboard/PropertyLayout/PropertyLayout.jsx'
 
 
 const router = createBrowserRouter(
@@ -20,7 +22,13 @@ const router = createBrowserRouter(
 
       <Route index element={<Home></Home>}></Route>
 
-      <Route path='/find-property' element={<FindProperty></FindProperty>}></Route>
+      <Route path='/property-for-rent' element={<PropertyLayout></PropertyLayout>}>
+
+        <Route index element={<FindProperty></FindProperty>}></Route>
+
+        <Route path='/property-for-rent/:beds' element={<PropertyDetails></PropertyDetails>}></Route>
+
+      </Route>
 
       <Route  element={<PrivatesRoutes></PrivatesRoutes>}>
 
