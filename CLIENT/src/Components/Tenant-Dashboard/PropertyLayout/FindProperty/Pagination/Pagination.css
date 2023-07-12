@@ -1,0 +1,30 @@
+.paginationContainer {
+    display: flex;
+    flex-direction: row;
+    width: 750px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pageLinks {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+}
+
+.pageLinks .page-item a {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin: 0px 10px;
+    text-decoration: none;
+    color:#1C3F94
+}
+
+.pageLinks .page-item.active a {
+    background-color: #1C3F94;
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: #FFFFFF;
+}

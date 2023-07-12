@@ -6,10 +6,11 @@ import { FaBath } from "react-icons/fa";
 import { RxShare2 } from "react-icons/rx";
 import { BsFillHeartFill } from "react-icons/bs";
 import '../PropertyCard/Propertycard.css'
-import { useState } from 'react';
+import { useContext } from 'react';
+import { myPropertyContext } from '../../../../../Utilities/PropertyContext';
 
 
-const PropertyCard = ({title, photo, beds, type, amount, area, city, state, description, premium, furnished, selfShowing, bathroom, PostTime }) => {
+const PropertyCard = ({id, title, photo, beds, type, amount, area, city, state, description, premium, furnished, selfShowing, bathroom, PostTime, like }) => {
 
 const icon = {
     like: {
@@ -24,18 +25,28 @@ const icon = {
     share: {
         fontSize: "15px",
         marginRight: "5px",
+    },
+    location: {
+        fontSize: "15px",
+        marginRight: "5px",
+    },
+    bedroom: {
+        fontSize: "15px",
+        marginRight: "5px",
+    },
+    bathroom: {
+        fontSize: "15px",
+        marginRight: "5px",
     }
 }
 
-const [like, setLike] = useState(false);
-
-const handleLike = () => {
-    setLike(!like);
-}
+const {handleLike} = useContext(myPropertyContext)
 
 return (
 
-<>
+<main className='container'>
+    <span className='timeStamp'> {PostTime} </span>
+
     <div className='cardContainer'>
 
         <img src={photo} alt='apartment photo'/>
@@ -50,9 +61,9 @@ return (
 
                 <p> &#8358; {amount} </p>
 
-                <p> <MdOutlineLocationOn style={icon.share}></MdOutlineLocationOn> {area}, {city}, {state}</p>
+                <p> <MdOutlineLocationOn style={icon.location}></MdOutlineLocationOn> {area}, {city}, {state}</p>
 
-                <p> {description.slice(0,100)} ... <Link> Read more </Link> </p>
+                <p> {description.slice(0,100)} ... <Link to={`/property-for-rent/${beds}-bedroom-flat-at-${city}`}> more details </Link> </p>
 
                 <ul className='perks'>
 
@@ -70,8 +81,8 @@ return (
 
                 <div className='amenities'>
 
-                    <p> <LuBedSingle style={icon.share}></LuBedSingle> {beds} bedroom </p>
-                    <p> <FaBath style={icon.share}></FaBath> {bathroom} bathroom </p>
+                    <p> <LuBedSingle style={icon.bedroom}></LuBedSingle> {beds} bedroom </p>
+                    <p> <FaBath style={icon.bathroom}></FaBath> {bathroom} bathroom </p>
 
                 </div>
 
@@ -79,9 +90,9 @@ return (
 
                     <p> <RxShare2 style={icon.share}></RxShare2> share </p>
 
-                    {like ? <p onClick={handleLike}> <BsFillHeartFill style={icon.like}></BsFillHeartFill> Like </p> 
+                    {like ? <p onClick={() => handleLike(id)}> <BsFillHeartFill style={icon.like}></BsFillHeartFill> Like </p> 
                     : 
-                    <p onClick={handleLike}> <BsFillHeartFill style={icon.dislike}></BsFillHeartFill> Like </p>}
+                    <p onClick={() => handleLike(id)}> <BsFillHeartFill style={icon.dislike}></BsFillHeartFill> Like </p>}
 
                 </div>
 
@@ -89,10 +100,8 @@ return (
 
         </div>
 
-        <p className='timeStamp'> {PostTime} </p>
-
     </div>
-</>
+</main>
 
 )
 

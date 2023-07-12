@@ -22,7 +22,7 @@ return (
         {user.public ? 
             <>
                 <div className='links'>
-                    <NavLink to = '/find-property'> Find an Apartment </NavLink>
+                    <NavLink to = '/property-for-rent'> Find an Apartment </NavLink>
                     <NavLink to = '/list-property' onClick={handleLoginPage}> List your property </NavLink>
                 </div>
 
