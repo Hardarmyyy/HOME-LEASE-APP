@@ -6,17 +6,19 @@ import { FaBath } from "react-icons/fa";
 import { RxShare2 } from "react-icons/rx";
 import { BsFillHeartFill } from "react-icons/bs";
 import '../PropertyCard/Propertycard.css'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { myPropertyContext } from '../../../../../Utilities/PropertyContext';
+import Share from '../../PropertyDetails/ShareIcons/Share';
 
 
-const PropertyCard = ({id, title, photo, beds, type, amount, area, city, state, description, premium, furnished, selfShowing, bathroom, PostTime, like }) => {
+const PropertyCard = ({id, title, photo, beds, type, amount, street , city, state, description, premium, furnished, selfShowing, bathroom, PostTime, like }) => {
 
+// styles for icons
 const icon = {
     like: {
         fontSize: "16px",
         marginRight: "5px",
-        color: "red"
+        color: "#DC143C"
     },
     dislike: {
         fontSize: "16px",
@@ -25,6 +27,7 @@ const icon = {
     share: {
         fontSize: "15px",
         marginRight: "5px",
+        display: "none"
     },
     location: {
         fontSize: "15px",
@@ -49,7 +52,7 @@ return (
 
     <div className='cardContainer'>
 
-        <img src={photo} alt='apartment photo'/>
+        <img src={photo[0]} alt='apartment photo'/>
 
         <div className='propertyDetailsContainer'>
 
@@ -61,11 +64,11 @@ return (
 
                 <p> &#8358; {amount} </p>
 
-                <p> <MdOutlineLocationOn style={icon.location}></MdOutlineLocationOn> {area}, {city}, {state}</p>
+                <p> <MdOutlineLocationOn style={icon.location}></MdOutlineLocationOn> {street}, {street}, {state}</p>
 
-                <p> {description.slice(0,100)} ... <Link to={`/property-for-rent/${beds}-bedroom-flat-at-${city}`}> more details </Link> </p>
+                <p> {description.slice(0,100)} <Link to={`/property-for-rent/${id}`}> ... more details</Link> </p> 
 
-                <ul className='perks'>
+                <ul className='perks'> 
 
                     {furnished ? <li> furnished </li> : <li> unfurnished </li>}
 
@@ -88,7 +91,7 @@ return (
 
                 <div className='likes'>
 
-                    <p> <RxShare2 style={icon.share}></RxShare2> share </p>
+                    <p style={icon.share}> <RxShare2 ></RxShare2> share </p>
 
                     {like ? <p onClick={() => handleLike(id)}> <BsFillHeartFill style={icon.like}></BsFillHeartFill> Like </p> 
                     : 

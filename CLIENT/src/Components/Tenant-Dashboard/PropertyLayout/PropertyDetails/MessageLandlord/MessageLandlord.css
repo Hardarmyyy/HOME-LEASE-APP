@@ -1,0 +1,26 @@
+.messageLandlord {
+    width: 280px;
+    height: 350px;
+    background-color: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.messageLandlord p:first-child {
+    text-align: center;
+    color: #3F4354;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif
+}
+
+.messageLandlord p {
+    text-align: center;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 200;
+    font-family:'Montserrat', sans-serif
+}
+

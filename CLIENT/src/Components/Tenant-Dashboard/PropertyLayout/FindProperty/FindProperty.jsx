@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../FindProperty/FindProperty.css'
 import Footer from '../../../FooterPage/Footer'
 import { useContext } from 'react'
@@ -25,6 +25,16 @@ const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
 const totalPages = Math.ceil(properties.length/propertiesPerPage);
 const currentProperties = properties.slice(indexOfFirstProperty, indexOfLastProperty)
 
+// define a use effect hook to scroll page to top when current page changes;
+useEffect(() => {
+window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+});
+}, [currentPage]);
+
+
 
 return (
 
@@ -47,7 +57,9 @@ return (
 
                     <div key={property.id}>
 
-                    <PropertyCard {...property}></PropertyCard>
+                        
+                        <PropertyCard {...property}></PropertyCard> 
+                        
 
                     </div>
 

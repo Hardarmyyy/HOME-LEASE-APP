@@ -2,3 +2,96 @@
     width: 80%;
     margin: 20px auto 80px;
 }
+
+.street {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.street h3 {
+    color: #333333;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.likes {
+    position: relative;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; */
+}
+
+.photoContainer {
+    position: relative;
+}
+
+.allPhotos a {
+    text-decoration: none;
+    position: absolute;
+    right: 2.5%;
+    bottom: 2.5%;
+    color: #1C3F94;
+    background-color: #FFFFFF;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: "'Jost', sans-serif";
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.gridPhotoWrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    box-sizing: border-box;
+    margin: 10px 0px 40px;
+}
+
+.gridPhotoWrapper div.One{
+    height: 500px;
+    width: 650px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.gridPhotoWrapper div.Two {
+    height: 245px;
+    width: 410px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+} 
+
+.gridPhotoWrapper div.Three {
+    height: 245px;
+    width: 410px;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+} 
+
+.gridPhotoWrapper div.One img,
+.gridPhotoWrapper div.Two img,
+.gridPhotoWrapper div.Three img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.gridPhotoWrapper div.One img:hover,
+.gridPhotoWrapper div.Two img:hover,
+.gridPhotoWrapper div.Three img:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.containerTwo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}

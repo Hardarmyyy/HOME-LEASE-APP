@@ -89,7 +89,7 @@
 }
 
 .emailAlerts form input[type="text"]:focus {
-    border: 1px solid #DDDDDD;
+    border: 2px solid #1C3F94;
     outline: none;
 }
 

@@ -26,7 +26,7 @@ const router = createBrowserRouter(
 
         <Route index element={<FindProperty></FindProperty>}></Route>
 
-        <Route path='/property-for-rent/:beds' element={<PropertyDetails></PropertyDetails>}></Route>
+        <Route path='/property-for-rent/:id' element={<PropertyDetails></PropertyDetails>}></Route>
 
       </Route>
 

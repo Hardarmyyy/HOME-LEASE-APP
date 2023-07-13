@@ -1,0 +1,16 @@
+.shareIcons {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 55%;
+    right: 85%;
+}
+
+.icons {
+    border-radius: 50px;
+    scale: 0.6;
+}
+
+.icons:hover {
+    transform: scale(1.10);
+}
