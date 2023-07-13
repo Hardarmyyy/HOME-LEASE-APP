@@ -3,15 +3,18 @@ import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 
-const PropertyBreadCrumb = () => {
+const PropertyBreadCrumb = ({beds, type, place}) => {
 
 const location = useLocation()
 
+// define link to home breadcrumb;
 const home = "Home"
-
 const propertyCrumbs = location.pathname.slice(0, 9).toLowerCase() 
-const detailsCrumbs = location.pathname.slice(18).toLowerCase();
 
+// define link to property breadcrumb;
+const detailsCrumbs = "/ " + beds + " bedroom " + type + " at " + place
+
+// styles for breadcrumbs
 const crumbStyle = {
     link: {
         fontFamily: "'Montserrat', sans-serif",

@@ -1,0 +1,27 @@
+.safetyBox {
+    width: 280px;
+    height: 320px;
+    background-color: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.safetyBox h4{
+    text-align: center;
+    color: #3F4354;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif
+}
+
+.safetyBox ul {
+    text-align: left;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 200;
+    font-family:'Montserrat', sans-serif;
+    list-style-type: disc;
+    list-style-position: outside;
+}

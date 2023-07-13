@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 const NewLetterCard = () => {
 
+// define styles for the form input element;
 const style = {
     container: {
         width: "280px",
@@ -32,6 +33,10 @@ const style = {
         width: "240px",
         margin: "0 auto"
     },
+    onFocus: {
+        border: '2px solid #1C3F94',
+        outline: 'none'
+    },
     paragraphOne: {
         textAlign: "center",
         color: "#3F4354",
@@ -46,6 +51,16 @@ const style = {
         fontFamily: "'Montserrat', sans-serif"
     }
 }
+// define styles for the hover state of the form input element;
+const [onFocus, setOnFocus] = useState(false)
+
+const inputStyle = onFocus ? {...style.input, ...style.onFocus}: style.input ;
+
+const handleInputStyle = () => {
+    setOnFocus(!onFocus)
+}
+
+// define state for newsletter form input
 
 const [newsLetter, setNewsLetter] = useState({
     username: '',
@@ -79,8 +94,12 @@ return (
         <p style={style.paragraphTwo}> Receive alerts when we have new properties available for rent </p>
 
         <form onSubmit={handleSubmit} style={style.form}>
-            <input type="text" name="username" placeholder="Enter your name" value={newsLetter.username} onChange={handleChange} required style={style.input} maxLength={35}/> <br />
-            <input type="text" name="email" placeholder="Enter your email address" value={newsLetter.email} onChange={handleChange} required style={style.input} maxLength={35}/> <br />
+            <input type="text" name="username" placeholder="Enter your name" value={newsLetter.username} onChange={handleChange} 
+            required style={inputStyle} onFocus={handleInputStyle} onBlur={handleInputStyle} maxLength={35}/> 
+            <br />
+            <input type="text" name="email" placeholder="Enter your email address" value={newsLetter.email} onChange={handleChange} 
+            required style={inputStyle} onFocus={handleInputStyle} onBlur={handleInputStyle} maxLength={35}/> 
+            <br />
             <Button padding='5px 63px'> Subscribe now </Button>
         </form>
         
